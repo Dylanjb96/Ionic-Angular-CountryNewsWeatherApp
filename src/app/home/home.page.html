@@ -18,4 +18,11 @@
     </ion-item>
     <ion-button expand="block" (click)="getCountries()">Search Country</ion-button>
   </div>
+
+  <ion-list *ngIf="recentSearches.length > 0">
+    <ion-list-header>Recent Searches</ion-list-header>
+    <ion-item *ngFor="let country of recentSearches" (click)="selectRecentSearch(country)">
+      {{ country }}
+    </ion-item>
+  </ion-list>
 </ion-content>
