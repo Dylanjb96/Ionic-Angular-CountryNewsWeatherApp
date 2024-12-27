@@ -7,5 +7,29 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
   imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
-  constructor() {}
+  isDarkMode = false;
+
+  constructor() {
+    this.initializeTheme();
+  }
+
+  initializeTheme() {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    this.isDarkMode = prefersDark.matches;
+    this.applyTheme(this.isDarkMode);
+
+    // Listen for system theme changes
+    prefersDark.addEventListener('change', (event) => {
+      this.applyTheme(event.matches);
+    });
+  }
+
+  toggleDarkMode() {
+    this.isDarkMode = !this.isDarkMode;
+    this.applyTheme(this.isDarkMode);
+  }
+
+  applyTheme(isDark: boolean) {
+    document.body.setAttribute('theme', isDark ? 'dark' : 'light');
+  }
 }
