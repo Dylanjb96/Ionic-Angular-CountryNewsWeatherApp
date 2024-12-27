@@ -3,16 +3,20 @@
     text-align: center; 
   }
   
-  ion-buttons ion-button {
-    color: white;
-    font-size: 0.8rem;
-    border-radius: 8px;
-    padding: 2px 1px;
-    transition: background-color 0.3s ease;
+  ion-buttons[slot="start"] {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #4caaaf, #9cf5fd); 
+    color: white; 
+    margin: auto;
+    font-weight: bold;
+    border-radius: 25px; 
+    text-transform: uppercase; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
-  
-  ion-buttons ion-button:hover {
-    background-color: rgba(255, 255, 255, 0.2); 
+
+  ion-buttons[slot="start"]:hover {
+    background-color: #4caf50; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
   
   

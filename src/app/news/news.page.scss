@@ -79,4 +79,21 @@ ion-header {
     font-size: 1rem; 
     margin-top: 24px; 
   }
+
+  ion-buttons[slot="start"] {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #4caaaf, #9cf5fd); 
+    color: white; 
+    margin: auto;
+    font-weight: bold;
+    border-radius: 25px; 
+    text-transform: uppercase; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  ion-buttons[slot="start"]:hover {
+    background-color: #4caf50; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
   

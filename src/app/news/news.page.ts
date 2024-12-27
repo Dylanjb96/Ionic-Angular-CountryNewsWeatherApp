@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { NewsService } from '../services/news.service';
 
@@ -25,7 +25,8 @@ export class NewsPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private newsService: NewsService
+    private newsService: NewsService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -54,5 +55,9 @@ export class NewsPage implements OnInit {
         this.isLoading = false;
       }
     );
+  }
+
+  goBack() {
+    this.router.navigate(['/countries']); //Redirect back to the Countries Page
   }
 }  
