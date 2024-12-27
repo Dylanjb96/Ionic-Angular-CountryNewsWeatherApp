@@ -26,4 +26,25 @@ ion-icon {
   font-size: 25px;
 }
 
+.container ion-button {
+  --background: linear-gradient(45deg, #3bdbff, #007bff);
+  --color: #fff;
+  --border-radius: 10px;
+  --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 35px;
+  margin-top: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: block;
+}
 
+.container ion-button:hover {
+  transform: scale(1.05); /*zoom on hover */
+  --box-shadow: 0px 6px 10px rgba(0, 123, 255, 0.3);
+}
+
+.container ion-button:active {
+  transform: scale(0.98); /*shrink on click */
+  --box-shadow: 0px 2px 5px rgba(0, 123, 255, 0.2);
+}
