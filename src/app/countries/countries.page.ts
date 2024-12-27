@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import {
   IonAvatar,
   IonButton,
+  IonButtons,
   IonContent, IonHeader,
   IonInput,
   IonItem,
@@ -30,6 +31,7 @@ import { CountriesService } from '../services/countries.service';
     IonItem, 
     IonLabel, 
     IonInput, 
+    IonButtons,
     IonButton, 
     IonList, 
     IonAvatar, 
@@ -98,5 +100,8 @@ export class CountriesPage implements OnInit {
     }
   }
   
+  goBack() {
+    this.router.navigate(['/']); //Redirect back to the Home Page
+  }
   
 }
