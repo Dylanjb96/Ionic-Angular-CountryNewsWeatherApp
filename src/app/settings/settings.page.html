@@ -29,10 +29,10 @@
   </ion-list>
 
   <ion-list>
-    <ion-item>
-      <ion-label>Enable Dark Mode</ion-label>
-      <ion-toggle [(ngModel)]="isDarkMode" (ionChange)="toggleDarkMode()"></ion-toggle>
-    </ion-item>
+      <ion-item>
+        <ion-label>Dark Mode</ion-label>
+        <ion-toggle [(ngModel)]="isDarkMode" (ionChange)="toggleDarkMode($event)"></ion-toggle>
+      </ion-item>
   </ion-list>
 
   <ion-button expand="block" (click)="saveSetting()">Save Setting</ion-button>

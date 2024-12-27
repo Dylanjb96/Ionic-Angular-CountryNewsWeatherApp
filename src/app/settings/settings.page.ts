@@ -14,6 +14,7 @@ import {
   IonRadio,
   IonRadioGroup,
   IonTitle,
+  IonToggle,
   IonToolbar
 } from '@ionic/angular/standalone';
 import { SettingsService } from '../services/settings.service';
@@ -37,14 +38,19 @@ import { SettingsService } from '../services/settings.service';
     IonRadio,
     IonRadioGroup,
     IonItem,
+    IonToggle
   ],
 })
 export class SettingsPage implements OnInit {
   selectSetting: string = 'metric';
+  isDarkMode: boolean = false;
+
   constructor(private settingsService: SettingsService, private router: Router) {}
 
   async ngOnInit() {
     this.loadSetting();
+    const theme = document.body.getAttribute('theme');
+    this.isDarkMode = theme === 'dark';
   }
 
   private async loadSetting() {
@@ -58,6 +64,13 @@ export class SettingsPage implements OnInit {
     alert('Setting saved!');
     this.router.navigate(['/home']); //Navigate back to home page after saving
   }
+
+  toggleDarkMode(event: any) {
+    const isDark = event.detail.checked; //Use the event value directly
+    this.isDarkMode = isDark;
+    document.body.setAttribute('theme', isDark ? 'dark' : 'light');
+  }
+  
   
 
   goBack() {
