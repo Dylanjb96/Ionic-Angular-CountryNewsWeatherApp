@@ -57,6 +57,20 @@ export class NewsPage implements OnInit {
     );
   }
 
+  shareArticle(article: any) {
+    if (navigator.share) {
+      navigator.share({
+        title: article.title,
+        text: article.description,
+        url: article.link,
+      })
+        .then(() => console.log('Shared successfully!'))
+        .catch((error) => console.error('Error sharing:', error));
+    } else {
+      alert('Sharing is not supported on this device.');
+    }
+  }
+
   goBack() {
     this.router.navigate(['/countries']); //Redirect back to the Countries Page
   }
