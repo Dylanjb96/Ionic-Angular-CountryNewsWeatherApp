@@ -5,9 +5,19 @@
 
 /*Light Mode */
 :root [theme='light'] {
---ion-background-color: #ffffff;
---ion-text-color: #000000;
---ion-item-background-color: #f8f8f8; 
+    --ion-background-color: #f9f9f9;
+    --ion-text-color: #333;
+    --ion-toolbar-background: #ffffff;
+    --ion-toolbar-color: #333;
+    --ion-item-background: #ffffff;
+    --ion-item-border-color: #ddd;
+    --ion-button-background: #007bff;
+    --ion-button-color: #ffffff;
+    --ion-button-hover-background: #0056b3;
+    --ion-toggle-handle-background: #007bff;
+    --ion-toggle-handle-border: 1px solid #0056b3;
+    --ion-radio-color-checked: #007bff;
+    --ion-list-header-color: #007bff;
 }
 
 /* Dark Mode */
