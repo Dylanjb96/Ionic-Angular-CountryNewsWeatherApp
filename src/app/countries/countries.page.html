@@ -1,13 +1,38 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>countries</ion-title>
+    <ion-title>Countries</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">countries</ion-title>
+      <ion-title size="large">Countries</ion-title>
     </ion-toolbar>
   </ion-header>
+
+
+<div class ="search-container">
+  <ion-item>
+    <ion-label position="floating">Search for a Country</ion-label>
+    <ion-input [(ngModel)]="searchQuery"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="searchCountries()">Search</ion-button>
+</div>
+
+<ion-list *ngIf="countries.length > 0">
+  <ion-item *ngFor="let country of countries">
+    <ion-avatar slot="start">
+      <img [src]="country.flags?.png" alt="{{ country.name?.common }}">
+    </ion-avatar>
+    <ion-label>
+      <h2>{{ country.name?.common }}</h2>
+      <p>{{ country.region }}</p>
+    </ion-label>
+    <ion-button slot="end" (click)="viewNews(country)">News</ion-button>
+    <ion-button slot="end" (click)="viewWeather(country)">Weather</ion-button>
+  </ion-item>
+</ion-list>
+
+<p *ngIf="countries.length === 0 && searchPerformed">No countries found.</p>
 </ion-content>

@@ -1,13 +1,26 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>news</ion-title>
+    <ion-title>News from {{ countryName }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">news</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list *ngIf="articles.length > 0; else noNews">
+    <ion-item *ngFor="let article of articles">
+      <ion-thumbnail slot="start">
+        <img [src]="article.image_url" alt="News Image" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.description }}</p>
+      </ion-label>
+      <ion-button slot="end" [href]="article.link" target="_blank">
+        Read
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noNews>
+    <p>No news articles found for {{ countryName }}.</p>
+  </ng-template>
 </ion-content>

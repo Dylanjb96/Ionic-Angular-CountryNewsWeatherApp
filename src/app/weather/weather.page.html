@@ -1,13 +1,24 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>weather</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">Back</ion-button>
+    </ion-buttons>
+    <ion-title>Weather</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">weather</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div *ngIf="weatherData; else loading">
+    <h1>Weather in {{ cityName }}</h1>
+    <div>
+      <img [src]="getIconUrl(weatherData.weather[0].icon)" alt="Weather Icon" />
+      <p>{{ weatherData.weather[0].description | titlecase }}</p>
+      <h2>{{ weatherData.main.temp }}°{{ units === 'metric' ? 'C' : units === 'imperial' ? 'F' : 'K' }}</h2>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <ion-spinner></ion-spinner>
+    <p>Loading weather data...</p>
+  </ng-template>
 </ion-content>
