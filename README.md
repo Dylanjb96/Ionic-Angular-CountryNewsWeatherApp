@@ -61,41 +61,14 @@ The Country, News & Weather App is an Ionic-Angular application that allows user
 - Switch between Light and Dark themes using Dark Mode toggle in the settings.
 
 ## Project Structure
-/G00438786
-│
 ├── /src
 │   ├── /app
 │   │   ├── /countries
-│   │   │   ├── countries.page.html
-│   │   │   ├── countries.page.scss
-│   │   │   ├── countries.page.ts
-│   │   │   └── countries.module.ts
 │   │   ├── /home
-│   │   │   ├── home.page.html
-│   │   │   ├── home.page.scss
-│   │   │   ├── home.page.ts
-│   │   │   └── home.module.ts
 │   │   ├── /news
-│   │   │   ├── news.page.html
-│   │   │   ├── news.page.scss
-│   │   │   ├── news.page.ts
-│   │   │   └── news.module.ts
 │   │   ├── /settings
-│   │   │   ├── settings.page.html
-│   │   │   ├── settings.page.scss
-│   │   │   ├── settings.page.ts
-│   │   │   └── settings.module.ts
 │   │   ├── /weather
-│   │   │   ├── weather.page.html
-│   │   │   ├── weather.page.scss
-│   │   │   ├── weather.page.ts
-│   │   │   └── weather.module.ts
 │   │   └── app.component.ts
-│   │
-│   ├── /assets
-│   │   └── (Static assets like images, icons, etc.)
-│   │
-│   └── index.html
 │
 ├── .gitignore
 ├── README.md (Contains project description and instructions)
