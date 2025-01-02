@@ -38,8 +38,8 @@ The Country, News & Weather App is an Ionic-Angular application that allows user
 ### Steps
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/country-news-weather-app.git
-   cd country-news-weather-app
+   git clone https://github.com/Dylanjb96/Ionic-Angular-CountryNewsWeatherApp.git
+   cd Ionic-Angular-CountryNewsWeatherApp
 
 2. Install dependencies:
  ```bash
