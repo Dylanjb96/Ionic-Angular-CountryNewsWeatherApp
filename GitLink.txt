@@ -1,0 +1,3 @@
+Github Account: Dylanjb96
+
+Project Link: https://github.com/Dylanjb96/Ionic-Angular-CountryNewsWeatherApp
